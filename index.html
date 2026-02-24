@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>板倉専用ビュー</title>
+
+<style>
+body {
+  margin: 0;
+  background: #0f1419;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: white;
+}
+
+.app {
+  max-width: 500px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background: #161b22;
+  border-bottom: 1px solid #222;
+}
+
+.timeline-container {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px;
+}
+
+.blocker {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+.embed-wrapper {
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="header">
+    板倉さん専用タイムライン
+  </div>
+
+  <div class="timeline-container">
+    <div class="embed-wrapper">
+      
+      <a class="twitter-timeline"
+         data-theme="dark"
+         data-chrome="noheader nofooter noborders transparent"
+         data-tweet-limit="10"
+         href="https://twitter.com/itazuratoshiyuk">
+      </a>
+
+      <div class="blocker"></div>
+
+    </div>
+  </div>
+</div>
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+
+</body>
+</html>
